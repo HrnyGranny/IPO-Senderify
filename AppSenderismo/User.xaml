@@ -1,0 +1,43 @@
+﻿<Window x:Class="AppSenderismo.User"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppSenderismo"
+        mc:Ignorable="d"
+        Title="User" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Opacity="0.985">
+    <Window.Background>
+        <ImageBrush ImageSource="Imágenes/Fondo.jpg" Opacity="0.8"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="217*" MinHeight="217"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="97*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="177*"/>
+            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="276*"/>
+            <ColumnDefinition Width="201*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="Imágenes/logo_transparent.png" Margin="174,43,39,47" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.997"/>
+                    <SkewTransform AngleY="-2.429" AngleX="4.415"/>
+                    <RotateTransform Angle="3.427"/>
+                    <TranslateTransform Y="-0.053" X="5.884"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label x:Name="User_Lbl" Grid.Column="1" Content="Usuario" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Width="118" Opacity="2" Height="34" Foreground="#FF170303"/>
+        <TextBox x:Name="UserTxt" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="30" BorderThickness="3,3,3,3" FontFamily="Arial" FontSize="18" SelectionBrush="Black" Grid.Row="1" Grid.Column="2" Foreground="#FF161616" Background="{x:Null}" BorderBrush="#FF110101" Margin="10,15,0,0"/>
+        <Label x:Name="Pass_Lbl" Content="Contraseña" Margin="5,11,13,11" Grid.Row="2" Grid.Column="1" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF170303"/>
+        <PasswordBox x:Name="PassTxt" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" Grid.Row="2" Height="30" BorderThickness="3,3,3,3" BorderBrush="Black" Background="{x:Null}" AutomationProperties.HelpText="fggf" FontSize="18" Margin="10,0,0,0"/>
+        <Button x:Name="AceptarBtm" Content="Aceptar" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Height="50" Width="176" Grid.Column="2" Margin="0,19,0,0" FontFamily="Segoe UI Black" Background="Black" BorderThickness="3,3,3,3" BorderBrush="{x:Null}" Click="AceptarBtm_Click" Foreground="White"/>
+        <Label x:Name="UsuarioOlvidadoLbl" Content="Usuario olvidado" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="154" FontFamily="Arial" Margin="0,31,0,0" MouseEnter="UsuarioOlvidadoLbl_MouseEnter" MouseLeave="UsuarioOlvidadoLbl_MouseLeave" HorizontalContentAlignment="Center" FontSize="14" MouseDown="UsuarioOlvidadoLbl_MouseDown" FontWeight="Bold" Foreground="White" />
+        <Label x:Name="AboutLbl" Content="Sobre Nosotros" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="154" FontFamily="Arial" Margin="10,0,0,0" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="AboutLbl_MouseEnter" MouseLeave="AboutLbl_MouseLeave" MouseDown="AboutLbl_MouseDown" />
+    </Grid>
+</Window>

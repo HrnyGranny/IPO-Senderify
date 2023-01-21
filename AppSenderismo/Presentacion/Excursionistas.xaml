@@ -1,0 +1,58 @@
+﻿<Window x:Class="AppSenderismo.Presentacion.Excursionistas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppSenderismo.Presentacion"
+        mc:Ignorable="d"
+        Title="Excursionistas" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="797" MaxHeight="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="345*"/>
+            <RowDefinition Height="89*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="800" Background="#FF76C04A" Grid.ColumnSpan="2" Margin="0,345,0,0" Grid.RowSpan="2"/>
+        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="264,0,0,0" Grid.Column="1"/>
+        <Image Source="/Presentacion/Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="279,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180.915"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="338,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
+        <Button x:Name="Rutas_Btm" Content="Rutas" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Rutas_Btm_Click"/>
+        <Button x:Name="Guias_Btm" Grid.Column="1" Content="Guias" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="128" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Guias_Btm_Click"/>
+        <ListBox x:Name="Excursionistas_Lst" Margin="70,54,70,54" SelectionChanged="Excursionistas_Lst_SelectionChanged"/>
+        <Label x:Name="Apellido_Lbl" Content="Apellido" HorizontalAlignment="Left" Margin="61,88,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="Apellido_Txt" HorizontalAlignment="Left" Margin="143,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="Telefono_Lbl" Content="Teléfono" HorizontalAlignment="Left" Margin="57,124,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="Telefono_Txt" HorizontalAlignment="Center" Margin="0,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="Correo_Lbl" Content="Correo" HorizontalAlignment="Left" Margin="57,162,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="Correo_Txt" HorizontalAlignment="Left" Margin="126,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="18" Grid.Column="1"/>
+        <Rectangle x:Name="Nombre_rct" HorizontalAlignment="Left" Height="42" Margin="398,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="201" Fill="#FF76C04A" Grid.ColumnSpan="2"/>
+        <Label x:Name="Nombre_lbl" Content="Nombre&#xA;" Margin="9,5,0,0" Width="86" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Height="36" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="Nombre_lbl_use" Content="Nombre" HorizontalAlignment="Left" Margin="106,8,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.492"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <ListBox x:Name="Rutas_Lst" Grid.Column="1"  Margin="67,234,220,30"/>
+        <CheckBox x:Name="Rutas_Chk" Grid.Column="1" Content="Rutas realizadas" HorizontalAlignment="Left" Margin="71,214,0,0" VerticalAlignment="Top" Checked="Rutas_Chk_Checked" Unchecked="Rutas_Chk_Unchecked"/>
+        <Button x:Name="Actualizar_Btm" Content="Actualizar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="227,252,0,0" Grid.Column="1" Click="Actualizar_Btm_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="262" Margin="29,73,0,0" Stroke="Black" VerticalAlignment="Top" Width="361" Grid.Column="1"/>
+
+    </Grid>
+</Window>

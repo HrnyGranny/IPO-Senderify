@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppSenderismo.Presentacion.Formularios"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="AppSenderismo.Presentacion.Formularios.Info_Ruta"
+        mc:Ignorable="d"
+        Title="Info_Ruta" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="797" MaxHeight="450" WindowStyle="None">
+    <Grid>
+
+        <TextBox x:Name="Nombre_txt" HorizontalAlignment="Left" Margin="138,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Nombre_lbl" Content="Nombre&#xA;" Margin="59,49,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="36"/>
+        <TextBox x:Name="Origen_txt" HorizontalAlignment="Left" Margin="138,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Origen_lbl" Content="Origen" Margin="59,90,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <TextBox x:Name="Destino_txt" HorizontalAlignment="Left" Margin="361,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Destino_lbl" Content="Destino" Margin="282,91,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="34"/>
+        <TextBox x:Name="Fecha1_txt" HorizontalAlignment="Left" Margin="137,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Fecha1_lbl" Content="Fecha" Margin="59,136,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <TextBox x:Name="Dificultad_Txt" HorizontalAlignment="Left" Margin="140,342,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140" Height="18"/>
+        <Label x:Name="Dificultad_lbl" Content="Dificultad" Margin="57,334,0,0" Width="78" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <TextBox x:Name="NumeroExcursionistas_txt" HorizontalAlignment="Left" Margin="230,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="22"/>
+        <Label x:Name="NumeroExcursionistas_lbl" Content="Numero Excursionistas" Margin="58,179,0,0" Width="172" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <TextBox x:Name="Tiempo_txt" HorizontalAlignment="Left" Margin="137,227,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="43" Height="17"/>
+        <Label x:Name="Tiempo_lbl" Content="Tiempo" Margin="58,217,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <Label x:Name="Tiempo2" Content="Horas" HorizontalAlignment="Left" Margin="184,221,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="Acceso_txt" HorizontalAlignment="Left" Margin="137,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Acceso_lbl" Content="Acceso" Margin="58,257,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <TextBox x:Name="Vuelta_txt" HorizontalAlignment="Left" Margin="361,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Vuelta_lbl" Content="Vuelta" Margin="282,258,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="34"/>
+        <TextBox x:Name="Material_txt" HorizontalAlignment="Left" Margin="138,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="18"/>
+        <Label x:Name="Material_lbl" Content="Material" Margin="59,299,0,0" Width="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="35"/>
+        <TextBox x:Name="Guia_Txt" HorizontalAlignment="Left" Margin="610,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Guia_lbl" Content="Guía" Margin="631,64,0,0" Width="78" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="36"/>
+        <TextBox x:Name="Pdi_Txt" HorizontalAlignment="Left" Margin="610,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Guia_Btm" Content="Info" HorizontalAlignment="Left" Margin="629,152,0,0" VerticalAlignment="Top" Height="27" Width="80" Background="#FF76C04A" BorderThickness="3,3,3,3" BorderBrush="#FF0B0101" Click="Guia_Btm_Click"/>
+        <Label x:Name="Pdi_lbl" Content="Puntos de interés" Margin="594,218,0,0" Width="152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="36"/>
+        <Button x:Name="Pdi_Btm" Content="Info" HorizontalAlignment="Left" Margin="633,299,0,0" VerticalAlignment="Top" Height="26" Width="76" BorderThickness="3,3,3,3" Background="#FF76C04A" BorderBrush="#FF060000" Click="Pdi_Btm_Click"/>
+        <Button x:Name="Cancelar_Btm" Content="X" HorizontalAlignment="Left" Margin="400,365,0,0" VerticalAlignment="Top" Height="38" Width="133" Background="#FFF62018" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Cancelar_Btm_Click" />
+
+    </Grid>
+</Window>

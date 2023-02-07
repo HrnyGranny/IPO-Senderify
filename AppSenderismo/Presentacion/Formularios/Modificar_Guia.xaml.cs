@@ -47,6 +47,21 @@ namespace AppSenderismo.Presentacion.Formularios
                     Telefono_Txt.Text = ListGuia[i].getTelefono();
                     Correo_Txt.Text = ListGuia[i].getCorreo();
                     Puntuacion_Txt.Text = Convert.ToString(ListGuia[i].getPuntuacion());
+
+                    if (this.ListGuia[i].getNombre() == "Jose")
+                    {
+                        Guia_Img.Source = new BitmapImage(new Uri("/Imágenes/Jose.jpg", UriKind.Relative));
+                    }
+
+                    if (this.ListGuia[i].getNombre() == "Carmen")
+                    {
+                        Guia_Img.Source = new BitmapImage(new Uri("/Imágenes/Maria.jpg", UriKind.Relative));
+                    }
+
+                    if (this.ListGuia[i].getNombre() == "Carlos")
+                    {
+                        Guia_Img.Source = new BitmapImage(new Uri("/Imágenes/Carlos.jpg", UriKind.Relative));
+                    }
                 }
             }
         }
@@ -55,6 +70,14 @@ namespace AppSenderismo.Presentacion.Formularios
         {
             try
             {
+                Reset();
+
+                if (Check() == 1)
+                {
+                    MessageBox.Show("Error: ¡Debes rellenar todos los huecos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
                 for (int j = 0; j < this.ListGuia.Count; j++)
                 {
                     if (this.Guia == this.ListGuia[j].getNombre())
@@ -64,9 +87,9 @@ namespace AppSenderismo.Presentacion.Formularios
                         ListGuia[j].setDisponibilidad(Convert.ToString(Disponibilidad_Txt.Text));
                         ListGuia[j].setTelefono(Convert.ToString(Telefono_Txt.Text));
                         ListGuia[j].setCorreo(Convert.ToString(Correo_Txt.Text));
-                        ListGuia[j].setPuntuacion(Convert.ToDouble(Puntuacion_Txt.Text) / 100);
+                        ListGuia[j].setPuntuacion(Convert.ToDouble(Puntuacion_Txt.Text));
       
-                        MessageBox.Show("Guia modificada");
+                        MessageBox.Show("¡Guia modificada con exito!");
                         IniciarGuias();
                     }
                 }
@@ -74,13 +97,60 @@ namespace AppSenderismo.Presentacion.Formularios
             }
             catch (FormatException)
             {
-                MessageBox.Show("Error: hay campos cuyos valores no están bien puestos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error: ¡Hay campos cuyos valores no están bien puestos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Puntuacion_Txt.Background = Brushes.LightPink;
             }
+        }
+
+        public void Reset()
+        {           
+            Apellido_Txt.Background = Brushes.White;
+            Idioma_Txt.Background = Brushes.White;
+            Disponibilidad_Txt.Background = Brushes.White;
+            Telefono_Txt.Background = Brushes.White;
+            Correo_Txt.Background = Brushes.White;
+            Puntuacion_Txt.Background = Brushes.White;
+        }
+
+        public int Check()
+        {
+            int v = 0;
+
+            if (string.IsNullOrEmpty(Apellido_Txt.Text) || string.IsNullOrEmpty(Idioma_Txt.Text) || string.IsNullOrEmpty(Disponibilidad_Txt.Text) || string.IsNullOrEmpty(Telefono_Txt.Text) || string.IsNullOrEmpty(Correo_Txt.Text) || string.IsNullOrEmpty(Puntuacion_Txt.Text))
+            {
+                v = 1;
+            }
+            if (string.IsNullOrEmpty(Apellido_Txt.Text))
+            {
+                Apellido_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Idioma_Txt.Text))
+            {
+                Idioma_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Disponibilidad_Txt.Text))
+            {
+                Disponibilidad_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Telefono_Txt.Text))
+            {
+                Telefono_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Correo_Txt.Text))
+            {
+                Correo_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Puntuacion_Txt.Text))
+            {
+                Puntuacion_Txt.Background = Brushes.LightPink;
+            }
+
+            return v;
         }
 
         private void Ayuda_Fto_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Modificar guia: \n\t Rellena todos los huecos de información y presiona el botón de Modificar \n Cancelar: \n\t Presiona el botón con la X en rojo", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Modificar guia: \n\tRellena todos los huecos de información y presiona el botón de Modificar", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Cancelar_Btm_Click(object sender, RoutedEventArgs e)
@@ -90,5 +160,12 @@ namespace AppSenderismo.Presentacion.Formularios
             guias.Show();
             this.Hide();
         }
+
+        private void Fotos_combo_Initialized(object sender, EventArgs e)
+        {
+            Fotos_combo.Items.Add("Imagen 1");
+            Fotos_combo.Items.Add("Imagen 2");
+            Fotos_combo.Items.Add("Imagen 3");
+        }   
     }
 }

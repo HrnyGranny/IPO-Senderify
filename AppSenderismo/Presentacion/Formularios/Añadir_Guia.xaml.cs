@@ -35,6 +35,14 @@ namespace AppSenderismo.Presentacion.Formularios
         {
             try
             {
+                Reset();
+
+                if (Check() == 1)
+                {
+                    MessageBox.Show("Error: ¡Debes rellenar todos los huecos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
                 Boolean exists = false;
 
                 Guia g = new Guia(Convert.ToString(Nombre_Txt.Text), Convert.ToString(Apellido_Txt.Text), Convert.ToString(Idioma_Txt.Text), Convert.ToString(Disponibilidad_Txt.Text), Convert.ToString(Telefono_Txt.Text), Convert.ToString(Correo_Txt.Text), Convert.ToDouble(Puntuacion_Txt.Text));
@@ -46,19 +54,19 @@ namespace AppSenderismo.Presentacion.Formularios
                 if (!exists)
                 {
                     ListGuia.Add(g);
-                    MessageBox.Show("Guia añadida");
+                    MessageBox.Show("¡Guia añadida con éxito!");
                     LimpiarBox();
                 }
 
                 Guias guias = new Guias(ListGuia, ListPdi, ListRutas);
                 guias.Modificar_Btm.IsEnabled = true;
                 guias.Eliminar_Btm.IsEnabled = true;
-                guias.Info_Btm.IsEnabled=true;
 
             }
             catch (FormatException)
             {
-                MessageBox.Show("Error: hay campos cuyos valores no están bien puestos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error: ¡Hay campos cuyos valores no están bien puestos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Puntuacion_Txt.Background = Brushes.LightPink;
             }
         }
 
@@ -74,6 +82,57 @@ namespace AppSenderismo.Presentacion.Formularios
        
         }
 
+        public void Reset()
+        {
+            Nombre_Txt.Background = Brushes.White;
+            Apellido_Txt.Background = Brushes.White;
+            Idioma_Txt.Background = Brushes.White;
+            Disponibilidad_Txt.Background = Brushes.White;
+            Telefono_Txt.Background = Brushes.White;
+            Correo_Txt.Background = Brushes.White;
+            Puntuacion_Txt.Background = Brushes.White;
+        }
+
+        public int Check()
+        {
+            int v = 0;
+
+            if (string.IsNullOrEmpty(Nombre_Txt.Text) || string.IsNullOrEmpty(Apellido_Txt.Text) || string.IsNullOrEmpty(Idioma_Txt.Text) || string.IsNullOrEmpty(Disponibilidad_Txt.Text) || string.IsNullOrEmpty(Telefono_Txt.Text) || string.IsNullOrEmpty(Correo_Txt.Text) || string.IsNullOrEmpty(Puntuacion_Txt.Text))
+            {
+                v = 1;
+            }
+            if (string.IsNullOrEmpty(Nombre_Txt.Text))
+            {
+                Nombre_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Apellido_Txt.Text))
+            {
+                Apellido_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Idioma_Txt.Text))
+            {
+                Idioma_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Disponibilidad_Txt.Text))
+            {
+                Disponibilidad_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Telefono_Txt.Text))
+            {
+                Telefono_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Correo_Txt.Text))
+            {
+                Correo_Txt.Background = Brushes.LightPink;
+            }
+            if (string.IsNullOrEmpty(Puntuacion_Txt.Text))
+            {
+                Puntuacion_Txt.Background = Brushes.LightPink;
+            }
+
+            return v;
+        }
+
         private void Cancelar_Btm_Click(object sender, RoutedEventArgs e)
         {
             Guias guias = new Guias(ListGuia,ListPdi,ListRutas);
@@ -84,7 +143,14 @@ namespace AppSenderismo.Presentacion.Formularios
 
         private void Ayuda_Fto_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Añadir Guia: \n\t Rellena todos los huecos de información y presiona el botón de aceptar \n Cancelar: \n\t Presiona el botón con la X en rojo", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Añadir Guia: \n\tRellena todos los huecos de información y presiona el botón de añadir", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Fotos_combo_Initialized(object sender, EventArgs e)
+        {
+            Fotos_combo.Items.Add("Imagen 1");
+            Fotos_combo.Items.Add("Imagen 2");
+            Fotos_combo.Items.Add("Imagen 3");
         }
     }
 }

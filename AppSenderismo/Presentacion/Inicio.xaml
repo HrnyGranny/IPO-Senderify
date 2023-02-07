@@ -5,23 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppSenderismo.Presentacion"
         mc:Ignorable="d"
-        Title="Inicio" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="800" MaxHeight="450">
+        Title="Inicio" Height="550" Width="900" WindowStartupLocation="CenterScreen" MinWidth="900" MinHeight="550" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="171*"/>
-            <RowDefinition Height="46*"/>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="52*"/>
         </Grid.RowDefinitions>
-        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="800" Background="#FF76C04A"/>
-        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="270,0,0,0" Grid.Column="1"/>
-        <Rectangle HorizontalAlignment="Center" Height="283" Stroke="Black" VerticalAlignment="Center" Width="298"/>
-        <Button x:Name="Rutas_Btm" Content="Rutas" HorizontalAlignment="Left" Margin="107,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Rutas_Btm_Click"/>
-        <Button x:Name="Guias_Btm" Content="Guías" HorizontalAlignment="Left" Margin="340,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Guias_Btm_Click"/>
-        <Button x:Name="Excursionistas_Btm" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Left" Margin="166,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="127" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Excursionistas_Btm_Click"/>
-        <Image Source="Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="279,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
+        <Rectangle x:Name="Fondo" Stroke="Black" Grid.ColumnSpan="2" Margin="0,0,0,94" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Imágenes/CaminoInicio.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Stroke="Black" Grid.Column="1" Margin="38,88,38,51" Fill="#FFCAFFC0"/>
+
+        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="113" Grid.Row="1" VerticalAlignment="Center" Width="900" Background="#FF76C04A"/>
+        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="326,0,0,0" Grid.Column="1"/>
+        <Button x:Name="Rutas_Btm" Content="Rutas" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Rutas_Btm_Click" Margin="121,0,0,0"/>
+        <Button x:Name="Guias_Btm" Content="Guías" HorizontalAlignment="Left" Margin="390,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Guias_Btm_Click"/>
+        <Button x:Name="Excursionistas_Btm" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="126" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Excursionistas_Btm_Click" Margin="206,0,0,0" Grid.ColumnSpan="2"/>
+        <Image Source="Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="335,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,12 +37,13 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Source="Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="338,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
-        <Image x:Name="Usuario_Fto" HorizontalAlignment="Left" Height="175" Margin="107,120,0,0" VerticalAlignment="Top" Width="183"/>
-        <Label x:Name="Usuario_Lbl" Content="Usuario" Height="33" Margin="107,67,106,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBox x:Name="Usuario_Box" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="186" Height="171" Margin="0,67,0,0"/>
-        <Label x:Name="Fecha" Grid.Column="1" Content="Última conexión:" HorizontalAlignment="Left" Margin="86,260,0,0" VerticalAlignment="Top" Width="114" Height="29" FontSize="14"/>
-        <Label x:Name="Fecha_Lbl" Grid.Column="1" Content="00/00/00" HorizontalAlignment="Left" Margin="205,260,0,0" VerticalAlignment="Top" Width="131" FontSize="14"/>
+        <Image Source="Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="394,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
+        <Image x:Name="Usuario_Fto" HorizontalAlignment="Left" Height="280" Margin="53,88,0,0" VerticalAlignment="Top" Width="339" ClipToBounds="True"/>
+        <Label x:Name="Usuario_Lbl" Content="Usuario" Height="32" Margin="206,116,135,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="Usuario_Box" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="318" Height="115" Margin="0,176,0,0" IsReadOnly="True"/>
+        <Label x:Name="Fecha" Grid.Column="1" Content="Última conexión:" HorizontalAlignment="Left" Margin="106,313,0,0" VerticalAlignment="Top" Width="114" Height="28" FontSize="14"/>
+        <Label x:Name="Fecha_Lbl" Grid.Column="1" Content="00/00/00" HorizontalAlignment="Left" Margin="225,313,0,0" VerticalAlignment="Top" Width="131" FontSize="14" Height="29" FontWeight="Bold"/>
+        <Label Grid.Column="1" Content="Buenas," HorizontalAlignment="Left" Margin="149,116,0,0" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>
 </Window>

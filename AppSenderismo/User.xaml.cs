@@ -88,7 +88,7 @@ namespace AppSenderismo
 
             Inicio inicio = new Inicio(this.usuario);
             inicio.InitializeComponent();
-            inicio.Show();
+            inicio.Show();           
             this.Hide();
 
         }
@@ -101,7 +101,7 @@ namespace AppSenderismo
         private void UsuarioOlvidadoLbl_MouseLeave(object sender, MouseEventArgs e)
         {
             UsuarioOlvidadoLbl.FontWeight = FontWeights.Bold;
-            UsuarioOlvidadoLbl.Foreground = Brushes.White;
+            UsuarioOlvidadoLbl.Foreground = Brushes.Black;
         }
         private void login_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

@@ -70,22 +70,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentacion\Formularios\InfoGuia.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentacion\Formularios\InfoPdi.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentacion\Formularios\Info_Guia.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentacion\Formularios\Info_Ruta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Presentacion\Formularios\Modificar_Guia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,18 +111,6 @@
     </Compile>
     <Compile Include="Presentacion\Formularios\Añadir_Ruta.xaml.cs">
       <DependentUpon>Añadir_Ruta.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Formularios\InfoGuia.xaml.cs">
-      <DependentUpon>InfoGuia.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Formularios\InfoPdi.xaml.cs">
-      <DependentUpon>InfoPdi.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Formularios\Info_Guia.xaml.cs">
-      <DependentUpon>Info_Guia.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Formularios\Info_Ruta.xaml.cs">
-      <DependentUpon>Info_Ruta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Formularios\Modificar_Guia.xaml.cs">
       <DependentUpon>Modificar_Guia.xaml</DependentUpon>
@@ -221,6 +193,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imágenes\Maria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imágenes\Carlos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imágenes\Jose.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imágenes\CaminoInicio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Presentacion\Iconos\volver-flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Presentacion\Iconos\informacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imágenes\Usuario_Prueba.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

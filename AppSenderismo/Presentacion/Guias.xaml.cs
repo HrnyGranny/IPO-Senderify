@@ -40,30 +40,55 @@ namespace AppSenderismo.Presentacion
             {
                 Modificar_Btm.IsEnabled = false;
                 Eliminar_Btm.IsEnabled = false;
-                Info_Btm.IsEnabled = false;
-
             }
 
         }
-        private void Info_Btm_Click(object sender, RoutedEventArgs e)
+
+        public void Rellenar()
         {
-            if (Guias_Lst.SelectedIndex != -1)
+            for (int i = 0; i < this.ListGuia.Count; i++)
             {
-                Info_Guia guia = new Info_Guia(ListGuia,ListPdi,ListRutas, Guias_Lst.Items[Guias_Lst.SelectedIndex].ToString());
-                guia.InitializeComponent();
-                guia.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Selecciona primero una guía!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (Guias_Lst.Items[Guias_Lst.SelectedIndex].ToString() == this.ListGuia[i].getNombre())
+                    {
+                        GuiaSelec.Content = Guias_Lst.Items[Guias_Lst.SelectedIndex];
+                        GIApellido_Txt.Text = this.ListGuia[i].getApellido();
+                        GIIdioma_Txt.Text = this.ListGuia[i].getIdioma();
+                        GIDisponibilidad_Txt.Text = this.ListGuia[i].getDisponibilidad();
+                        GITeléfono_Txt.Text = "" + this.ListGuia[i].getTelefono();
+                        GICorreo_Txt.Text = "" + this.ListGuia[i].getCorreo();
+                        GIPuntuación_Txt.Text = Convert.ToString(this.ListGuia[i].getPuntuacion());
+
+                        if (this.ListGuia[i].getNombre() == "Jose")
+                        {
+                            Guia_Foto.Source = new BitmapImage(new Uri("/Imágenes/Jose.jpg", UriKind.Relative));
+                        }
+
+                        if (this.ListGuia[i].getNombre() == "Carmen")
+                        {
+                            Guia_Foto.Source = new BitmapImage(new Uri("/Imágenes/Maria.jpg", UriKind.Relative));
+                        }
+
+                        if (this.ListGuia[i].getNombre() == "Carlos")
+                        {
+                            Guia_Foto.Source = new BitmapImage(new Uri("/Imágenes/Carlos.jpg", UriKind.Relative));
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    String e = ""+ex;
+                }
             }
 
         }
+
+
 
         private void Eliminar_Btm_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Esta accion es definitva, ¿Estas seguro?", "Warning", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+            if (MessageBox.Show("Vas a eliminar un guia de forma definitiva, ¿Estas seguro?", "Warning", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
             {
                 if (Guias_Lst.SelectedIndex != -1)
                 {
@@ -73,9 +98,18 @@ namespace AppSenderismo.Presentacion
                         if (nombre == ListGuia[i].getNombre())
                         {
                             Guias_Lst.UnselectAll();
+                            GIApellido_Txt.Text = "";
+                            GIIdioma_Txt.Text = "";
+                            GIDisponibilidad_Txt.Text = "";
+                            GITeléfono_Txt.Text = "";
+                            GICorreo_Txt.Text = "";
+                            GIPuntuación_Txt.Text = "";
+                            Guia_Foto.Visibility= Visibility.Collapsed;
+                            FotoPrueba.Visibility = Visibility.Visible;
                             ListGuia.Remove(ListGuia[i]);
-                            MessageBox.Show("Guía eliminada");
+                            MessageBox.Show("¡Guía eliminada con exito!");
                             Guias_Lst.Items.Clear();
+                            GuiaSelec.Content = "Guía Seleccionada";
                             for (int j = 0; j < ListGuia.Count; j++)
                             {
                                 {
@@ -95,14 +129,13 @@ namespace AppSenderismo.Presentacion
             {
                 Modificar_Btm.IsEnabled = false;
                 Eliminar_Btm.IsEnabled = false;
-                Info_Btm.IsEnabled = false;
 
             }
         }
 
         private void Añadir_Btm_Click(object sender, RoutedEventArgs e)
         {
-            Añadir_Guia añadir = new Añadir_Guia(this.ListGuia,this.ListPdi,this.ListRutas);
+            Añadir_Guia añadir = new Añadir_Guia(this.ListGuia, this.ListPdi, this.ListRutas);
             añadir.InitializeComponent();
             añadir.Show();
             this.Hide();
@@ -120,7 +153,7 @@ namespace AppSenderismo.Presentacion
             }
             else
             {
-                MessageBox.Show("Selecciona primero una ruta!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Selecciona primero una Guía!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -134,7 +167,7 @@ namespace AppSenderismo.Presentacion
 
         private void Excursionistas_Btm_Click(object sender, RoutedEventArgs e)
         {
-            Excursionistas excursionistas = new Excursionistas(ListGuia,ListPdi,ListRutas);
+            Excursionistas excursionistas = new Excursionistas(ListGuia, ListPdi, ListRutas);
             excursionistas.InitializeComponent();
             excursionistas.Show();
             this.Hide();
@@ -143,18 +176,26 @@ namespace AppSenderismo.Presentacion
         private void Salida_Fto_MouseDown(object sender, MouseButtonEventArgs e)
         {
             User u = new User();
-            this.Hide();
+            this.Close();
             u.Show();
         }
 
         private void Ayuda_Fto_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Añadir: \n\t Botón para añadir Guias \n Modificar: \n\t Botón para modificar una Guia seleccionada \n Eliminar: \n\t Botón para eliminar una Guia seleccionada \n Informacion: \n\t Botón para obtener informacion de una guía seleccionada", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Añadir: \n\tBotón para añadir Guias \n Modificar: \n\tBotón para modificar una Guia seleccionada \n Eliminar: \n\tBotón para eliminar una Guia seleccionada", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void login_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+        private void Guias_Lst_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FotoPrueba.Visibility= Visibility.Collapsed;
+            Guia_Foto.Visibility = Visibility.Visible;
+            Rellenar();
+        }
     }
 }
+

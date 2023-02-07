@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppSenderismo.Presentacion"
         mc:Ignorable="d"
-        Title="Guias" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="797" MaxHeight="450">
+        Title="Guias" Height="550" Width="900" WindowStartupLocation="CenterScreen" MinWidth="900" MinHeight="550" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="900" MaxHeight="550" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="173*"/>
-            <RowDefinition Height="44*"/>
+            <RowDefinition Height="224*"/>
+            <RowDefinition Height="41*"/>
         </Grid.RowDefinitions>
-        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="800" Background="#FF76C04A" Grid.ColumnSpan="2" Margin="0,343,0,0" Grid.RowSpan="2"/>
-        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="264,0,0,0" Grid.Column="1"/>
-        <Image Source="/Presentacion/Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="279,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
+        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="108" VerticalAlignment="Center" Width="900" Background="#FF76C04A" Grid.ColumnSpan="2" Grid.Row="1">
+            <Button x:Name="Guias_Btm" Content="Guías" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" IsEnabled="False"/>
+        </Border>
+        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="320,0,0,0" Grid.Column="1"/>
+        <Image Source="/Presentacion/Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="335,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,15 +29,37 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="338,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
-        <Button x:Name="Rutas_Btm" Content="Rutas" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="0,23,0,0" Click="Rutas_Btm_Click"/>
-        <Button x:Name="Excursionistas_Btm" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="39" Width="128" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="0,23,0,0" Click="Excursionistas_Btm_Click"/>
-        <Label x:Name="Guias_Lbl" Content="GUIAS" HorizontalAlignment="Left" Margin="37,77,0,0" VerticalAlignment="Top" Width="136" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <ListBox x:Name="Guias_Lst" Margin="70,116,70,27"/>
-        <Button x:Name="Añadir_Btm" Content="Añadir" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,68,0,0" Click="Añadir_Btm_Click"/>
-        <Button x:Name="Modificar_Btm" Content="Modificar" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,124,0,0" Click="Modificar_Btm_Click"/>
-        <Button x:Name="Eliminar_Btm" Content="Eliminar" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF9D2E2E" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,179,0,0" Click="Eliminar_Btm_Click" Foreground="#FF9D2E2E"/>
-        <Button x:Name="Info_Btm" Content="Info" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,264,0,0" Click="Info_Btm_Click"/>
+        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="394,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
+        <Button x:Name="Rutas_Btm" Content="Rutas" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Rutas_Btm_Click" Margin="144,0,0,0"/>
+        <Button x:Name="Excursionistas_Btm" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="128" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Excursionistas_Btm_Click" Margin="191,0,0,0"/>
+        <Label x:Name="Guias_Lbl" Content="GUÍAS" HorizontalAlignment="Left" Margin="34,59,0,0" VerticalAlignment="Top" Width="136" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="34"/>
+        <ListBox x:Name="Guias_Lst" Margin="67,98,52,167" SelectionChanged="Guias_Lst_SelectionChanged"/>
+        <Button x:Name="Añadir_Btm" Content="Añadir" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="241" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="111,368,0,0" Click="Añadir_Btm_Click"/>
+        <Button x:Name="Modificar_Btm" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="100,306,0,0" Click="Modificar_Btm_Click"/>
+        <Button x:Name="Eliminar_Btm" Content="Eliminar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF141313" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="250,306,0,0" Click="Eliminar_Btm_Click" Foreground="#FF171515"/>
+        <DockPanel x:Name="GState" LastChildFill="False" Margin="60,219,214,47" Grid.Column="1">
+            <TextBox x:Name="GSApellido_Txt" TextWrapping="Wrap" Text="Apellido" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSIdioma_Txt" TextWrapping="Wrap" Text="Idioma" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSDisponibilidad_Txt" TextWrapping="Wrap" Text="Disponibilidad" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSTelefono_Txt" TextWrapping="Wrap" Text="Teléfono" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSCorreo_Txt" TextWrapping="Wrap" Text="Correo" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSPuntuacion_Txt" TextWrapping="Wrap" Text="Puntuación" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+        </DockPanel>
+        <DockPanel x:Name="GInfo" LastChildFill="False" Margin="229,219,65,47" Grid.Column="1">
+            <TextBox x:Name="GIApellido_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GIIdioma_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GIDisponibilidad_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GITeléfono_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GICorreo_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GIPuntuación_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+        </DockPanel>
+        <Label x:Name="GuiaSelec" Content="Guía Seleccionada&#xA;" Margin="60,170,220,232" Grid.Column="1" FontSize="18" FontWeight="Bold"/>
+        <Image x:Name="Guia_Foto" Grid.Column="1" HorizontalAlignment="Left" Height="151" Margin="191,76,0,0" VerticalAlignment="Top" Width="186"/>
+        <Rectangle x:Name="FotoPrueba" HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="149" Grid.Column="1" Margin="225,59,0,0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Imágenes/Usuario_Prueba.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
     </Grid>
 </Window>

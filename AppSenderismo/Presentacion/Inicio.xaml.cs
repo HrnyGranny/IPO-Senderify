@@ -30,7 +30,7 @@ namespace AppSenderismo.Presentacion
             InitializeComponent();
             IniciarPdi();
             IniciarGuias();
-            IniciarRutas();
+            IniciarRutas();           
             fecha = leerFecha("Time.txt");
             Fecha_Lbl.Content = fecha;
             escribirFecha("Time.txt");
@@ -38,12 +38,12 @@ namespace AppSenderismo.Presentacion
             Usuario_Lbl.Content = user;
             if (user == "Alvaro"){
                 Usuario_Fto.Source = new BitmapImage(new Uri("/Presentacion/Usuarios/Alvaro.png", UriKind.Relative));
-                Usuario_Box.Text = "Administrador jefe";
+                Usuario_Box.Text = "Apellido: Ruiz \nEdad: 22 \nCargo: Administrador jefe\nInfo: ...";
             }
             else
             {
                 Usuario_Fto.Source = new BitmapImage(new Uri("/Presentacion/Usuarios/Cristina.jpeg", UriKind.Relative));
-                Usuario_Box.Text = "Administrador suplente";
+                Usuario_Box.Text = "Apellido: Ruiz \nEdad: 22 \nCargo: Administrador suplente\nInfo: ...";
             }
         }
         private String leerFecha(String path)
@@ -144,6 +144,6 @@ namespace AppSenderismo.Presentacion
             Application.Current.Shutdown();
         }
     }
-
-
 }
+
+

@@ -5,36 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppSenderismo.Presentacion.Formularios"
         mc:Ignorable="d"
-        Title="Modificar_Guia" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="797" MaxHeight="450" WindowStyle="None">
+        Title="Modificar_Guia" Height="550" Width="900" WindowStartupLocation="CenterScreen" MinWidth="900" MinHeight="550" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FF76C04A" MaxWidth="900" MaxHeight="550" WindowStyle="None">
     <Grid>
-        <Label x:Name="Apellido_Lbl" Content="Apellido" HorizontalAlignment="Left" Margin="78,128,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Apellido_Txt" HorizontalAlignment="Left" Margin="159,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Idioma_Lbl" Content="Idioma" HorizontalAlignment="Left" Margin="78,162,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Idioma_Txt" HorizontalAlignment="Left" Margin="159,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Disponibilidad_Lbl" Content="Disponibilidad" HorizontalAlignment="Left" Margin="54,200,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Disponibilidad_Txt" HorizontalAlignment="Left" Margin="183,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Telefono_Lbl" Content="Teléfono" HorizontalAlignment="Left" Margin="78,240,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Telefono_Txt" HorizontalAlignment="Left" Margin="159,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Correo_Lbl" Content="Correo" HorizontalAlignment="Left" Margin="78,278,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Correo_Txt" HorizontalAlignment="Left" Margin="147,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="18"/>
-        <Label x:Name="Puntuacion_Lbl" Content="Puntuación" HorizontalAlignment="Left" Margin="67,318,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Puntuacion_Txt" HorizontalAlignment="Left" Margin="171,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Height="24"/>
-        <Button x:Name="Añadir_Btm" Content="Modificar" HorizontalAlignment="Left" Margin="493,326,0,0" VerticalAlignment="Top" Height="39" Width="120" Background="#FF3C9E5B" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Añadir_Btm_Click"/>
-        <Button x:Name="Cancelar_Btm" Content="X" HorizontalAlignment="Left" Margin="632,326,0,0" VerticalAlignment="Top" Height="39" Width="40" Background="#FFF62018" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Cancelar_Btm_Click"/>
-        <Rectangle x:Name="Nombre_rct" HorizontalAlignment="Left" Height="42" Margin="61,48,0,0" Stroke="Black" VerticalAlignment="Top" Width="201" Fill="#FF76C04A"/>
-        <Label x:Name="Nombre_lbl" Content="Nombre&#xA;" Margin="72,53,0,0" Width="86" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Height="36" FontWeight="Bold"/>
-        <Label x:Name="Nombre_lbl_use" Content="Nombre" HorizontalAlignment="Left" Margin="169,56,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
+        <Rectangle Stroke="Black" Fill="#FFCAFFC0" Margin="58,54,61,58"/>
+        <Rectangle HorizontalAlignment="Left" Height="62" Margin="106,94,0,0" Stroke="Black" VerticalAlignment="Top" Width="235" Fill="#FF76C04A"/>
+
+        <Label x:Name="Nombre_Lbl" Content="Nombre" HorizontalAlignment="Left" Margin="125,106,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151" FontWeight="Bold"/>
+        <Label x:Name="Apellido_Lbl" Content="Apellido" HorizontalAlignment="Left" Margin="106,176,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151"/>
+        <TextBox x:Name="Apellido_Txt" HorizontalAlignment="Left" Margin="257,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Idioma_Lbl" Content="Idioma" HorizontalAlignment="Left" Margin="106,211,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151"/>
+        <TextBox x:Name="Idioma_Txt" HorizontalAlignment="Left" Margin="257,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Disponibilidad_Lbl" Content="Disponibilidad" HorizontalAlignment="Left" Margin="106,249,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151"/>
+        <TextBox x:Name="Disponibilidad_Txt" HorizontalAlignment="Left" Margin="257,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Telefono_Lbl" Content="Teléfono" HorizontalAlignment="Left" Margin="106,289,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151"/>
+        <TextBox x:Name="Telefono_Txt" HorizontalAlignment="Left" Margin="257,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Correo_Lbl" Content="Correo" HorizontalAlignment="Left" Margin="106,327,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151"/>
+        <TextBox x:Name="Correo_Txt" HorizontalAlignment="Left" Margin="257,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="18"/>
+        <Label x:Name="Puntuacion_Lbl" Content="Puntuación" HorizontalAlignment="Left" Margin="106,366,0,0" VerticalAlignment="Top" FontSize="18" VerticalContentAlignment="Center" Width="151"/>
+        <TextBox x:Name="Puntuacion_Txt" HorizontalAlignment="Left" Margin="257,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Height="23"/>
+        <Button x:Name="Añadir_Btm" Content="Modificar" HorizontalAlignment="Left" Margin="668,460,0,0" VerticalAlignment="Top" Height="51" Width="151" Background="#FF3C9E5B" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Añadir_Btm_Click"/>
+        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" HorizontalAlignment="Left" Height="46" Margin="844,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
+        <Button x:Name="Cancelar_Btm" HorizontalAlignment="Left" Margin="799,7,0,0" VerticalAlignment="Top" Height="39" Width="40" BorderBrush="#FF0B0B0B" BorderThickness="0,0,0,0" FontWeight="Bold" FontSize="16" Click="Cancelar_Btm_Click" Focusable="False">
+            <Button.Background>
+                <ImageBrush ImageSource="/Presentacion/Iconos/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="Nombre_lbl_use" Content="Label" HorizontalAlignment="Left" Margin="238,108,0,0" VerticalAlignment="Top" FontSize="16" Height="34" Width="77"/>
+        <Image x:Name="Guia_Img" HorizontalAlignment="Left" Height="205" Margin="561,140,0,0" VerticalAlignment="Top" Width="225"/>
+        <ComboBox x:Name="Fotos_combo" HorizontalAlignment="Left" Margin="561,306,0,0" VerticalAlignment="Top" Width="228" Height="24" RenderTransformOrigin="0.5,0.5" Initialized="Fotos_combo_Initialized">
+            <ComboBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="1.492"/>
+                    <RotateTransform Angle="0"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Rectangle HorizontalAlignment="Left" Height="41" Margin="728,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="72" Fill="#FF76C04A"/>
-        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" HorizontalAlignment="Left" Height="46" Margin="741,-2,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
+            </ComboBox.RenderTransform>
+        </ComboBox>
 
     </Grid>
 </Window>

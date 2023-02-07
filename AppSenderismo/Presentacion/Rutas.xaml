@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppSenderismo.Presentacion"
         mc:Ignorable="d"
-        Title="Rutas" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" MaxWidth="800" MaxHeight="450">
+        Title="Rutas" Height="550" Width="900" WindowStartupLocation="CenterScreen" MinWidth="900" MinHeight="550" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFCAFFC0" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="49*"/>
-            <RowDefinition Height="13*"/>
+            <RowDefinition Height="226*"/>
+            <RowDefinition Height="41*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Center" Width="800" Background="#FF76C04A" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="264,0,0,0" Grid.Column="1"/>
-        <Image Source="/Presentacion/Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="279,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
+        <Border x:Name="Abajo" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="112" VerticalAlignment="Center" Width="900" Background="#FF76C04A" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Border x:Name="Arriba" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="136" Background="#FF76C04A" Margin="320,0,0,0" Grid.Column="1"/>
+        <Image Source="/Presentacion/Iconos/salida.png" x:Name="Salida_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="335,5,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5" MouseDown="Salida_Fto_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,16 +27,107 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="338,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
-        <Button x:Name="Guias_Btm" Content="Guías" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Guias_Btm_Click"/>
-        <Button x:Name="Excursionistas_Btm" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="128" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Excursionistas_Btm_Click"/>
-        <Label x:Name="Rutas1" Content="RUTAS" HorizontalAlignment="Left" Margin="37,77,0,0" VerticalAlignment="Top" Width="136" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <ListBox x:Name="Rutas_Lst" Margin="70,116,70,24"/>
-        <CheckBox x:Name="Antiguas_chb" Content="Incluir antiguas" HorizontalAlignment="Left" Margin="215,89,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
-        <Button x:Name="Añadir_Btm" Content="Añadir" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,68,0,0" Click="Añadir_Btm_Click"/>
-        <Button x:Name="Modificar_Btm" Content="Modificar" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,124,0,0" Click="Modificar_Btm_Click"/>
-        <Button x:Name="Eliminar_Btm" Content="Eliminar" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF9D2E2E" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,179,0,0" Click="Eliminar_Btm_Click" Foreground="#FF9D2E2E"/>
-        <Button x:Name="Info_Btm" Content="Info" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="0,264,0,0" Click="Info_Btm_Click"/>
+        <Image Source="/Presentacion/Iconos/pregunta.png" x:Name="Ayuda_Fto" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="394,0,0,0" VerticalAlignment="Top" Width="60" MouseDown="Ayuda_Fto_MouseDown"/>
+        <Button x:Name="Rutas_Btm" Content="Rutas" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" IsEnabled="False" Margin="149,0,0,0"/>
+        <Button x:Name="Guias_Btm" Content="Guías" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Guias_Btm_Click" Grid.ColumnSpan="2" Margin="390,0,0,0"/>
+        <Button x:Name="Excursionistas_Btm" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="39" Width="128" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Click="Excursionistas_Btm_Click" Margin="196,0,0,0"/>
+        <Label x:Name="Rutas1" Content="RUTAS" HorizontalAlignment="Left" Margin="74,44,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="34"/>
+        <ListBox x:Name="Rutas_Lst" Margin="74,83,66,151" SelectionChanged="Rutas_Lst_SelectionChanged"/>
+        <CheckBox x:Name="Antiguas_chb" Content="Incluir antiguas" HorizontalAlignment="Left" Margin="263,56,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Height="15" Width="100"/>
+        <Button x:Name="Añadir_Btm" Content="Añadir" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="246" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="0,375,0,0" Click="Añadir_Btm_Click"/>
+        <Button x:Name="Modificar_Btm" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="#FF0B0B0B" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="89,318,0,0" Click="Modificar_Btm_Click"/>
+        <Button x:Name="Eliminar_Btm" Content="Eliminar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="120" Background="{x:Null}" BorderBrush="Black" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Margin="243,318,0,0" Click="Eliminar_Btm_Click"/>
+        <DockPanel x:Name="State" LastChildFill="False" Margin="30,78,209,116" Grid.Column="1">
+            <TextBox x:Name="SOrigen_Txt" TextWrapping="Wrap" Text="Origen" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SDestino_Txt" TextWrapping="Wrap" Text="Destino" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SFecha_Txt" TextWrapping="Wrap" Text="Fecha" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SNExcursionistas_Txt" TextWrapping="Wrap" Text="Número de excursionistas" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="STiempo_Txt" TextWrapping="Wrap" Text="Tiempo" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SAcceso_Txt" TextWrapping="Wrap" Text="Accesso" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SVuelta_Txt" TextWrapping="Wrap" Text="Vuelta" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SMaterial_Txt" TextWrapping="Wrap" Text="Material" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="SDificultad_Txt" TextWrapping="Wrap" Text="Dificultad" DockPanel.Dock="Top" Height="24" IsReadOnly="True" Background="#FFD3DCD2"/>
+        </DockPanel>
+        <DockPanel x:Name="Info" LastChildFill="False" Margin="224,78,15,116" Grid.Column="1">
+            <TextBox x:Name="IOrigen_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="IDestino_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="IFecha_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="INExcursionistas_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="ITiempo_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="IAcceso_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="IVuelta_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="IMaterial_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="IDificultad_Txt" TextWrapping="Wrap" Text="" DockPanel.Dock="Top" Height="24" IsReadOnly="True"/>
+        </DockPanel>
+        <Label x:Name="RutaSelec" Grid.Column="1" Content="RutaSeleccionada&#xD;&#xA;" HorizontalAlignment="Left" Margin="30,41,0,0" VerticalAlignment="Top" Width="145" Height="37" FontSize="16" FontWeight="Bold"/>
+        <DockPanel x:Name="GState" LastChildFill="False" Margin="63,149,211,119" Grid.Column="1" Visibility="Collapsed">
+            <TextBox x:Name="GSApellido_Txt" TextWrapping="Wrap" Text="Apellido" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSIdioma_Txt" TextWrapping="Wrap" Text="Idioma" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSDisponibilidad_Txt" TextWrapping="Wrap" Text="Disponibilidad" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSTelefono_Txt" TextWrapping="Wrap" Text="Teléfono" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSCorreo_Txt" TextWrapping="Wrap" Text="Correo" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="GSPuntuacion_Txt" TextWrapping="Wrap" Text="Puntuación" DockPanel.Dock="Top" Height="27" IsReadOnly="True" Background="#FFD3DCD2"/>
+        </DockPanel>
+        <DockPanel x:Name="GInfo" LastChildFill="False" Margin="232,149,62,119" Grid.Column="1" Visibility="Collapsed">
+            <TextBox x:Name="GIApellido_Txt" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GIIdioma_Txt" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GIDisponibilidad_Txt" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GITeléfono_Txt" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GICorreo_Txt" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+            <TextBox x:Name="GIPuntuación_Txt" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Top" Height="27" IsReadOnly="True"/>
+        </DockPanel>
+        <Label x:Name="GuiaSelec" Content="Guia Seleccionada&#xD;&#xA;" Margin="63,109,217,289" Grid.Column="1" FontSize="18" FontWeight="Bold" Visibility="Collapsed"/>
+        <Button x:Name="Volver_Btm" Content="Volver" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="50" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="324,315,0,0" Click="Volver_Btm_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Visibility="Collapsed">
+            <Button.Background>
+                <ImageBrush ImageSource="/Presentacion/Iconos/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <DockPanel x:Name="PState" LastChildFill="False" Margin="74,269,187,99" Grid.Column="1" Visibility="Collapsed">
+            <TextBox x:Name="PSDescripcion_Txt" TextWrapping="Wrap" Text="Descripción" RenderTransformOrigin="0.568,0.507" DockPanel.Dock="Top" Height="35" IsReadOnly="True" Background="#FFD3DCD2"/>
+            <TextBox x:Name="PSTipologia_Txt" TextWrapping="Wrap" Text="Tipología" RenderTransformOrigin="0.568,0.507" DockPanel.Dock="Top" Height="35" IsReadOnly="True" Background="#FFD3DCD2"/>
+        </DockPanel>
+        <DockPanel x:Name="PInfo" LastChildFill="False" Margin="223,269,42,99" Grid.Column="1" Visibility="Collapsed">
+            <TextBox x:Name="PIDescripcion_Txt" TextWrapping="Wrap" Text="" RenderTransformOrigin="0.568,0.507" DockPanel.Dock="Top" Height="35" IsReadOnly="True"/>
+            <TextBox x:Name="PITipologia_Txt" TextWrapping="Wrap" Text="" RenderTransformOrigin="0.568,0.507" DockPanel.Dock="Top" Height="35" IsReadOnly="True"/>
+        </DockPanel>
+        <Label x:Name="PdiSelec" Grid.Column="1" Content="Pdi Seleccionado" HorizontalAlignment="Left" Margin="74,230,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="164" Visibility="Collapsed"/>
+        <Image x:Name="Pdi_Foto" Grid.Column="1" HorizontalAlignment="Left" Height="140" Margin="136,78,0,0" VerticalAlignment="Top" Width="228"/>
+        <Button x:Name="Volver2_Btm" Content="Volver" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="50" BorderBrush="{x:Null}" BorderThickness="3,3,3,3" FontWeight="Bold" FontSize="16" Grid.Column="1" Margin="349,338,0,0" Click="Volver2_Btm_Click" Foreground="{x:Null}" Visibility="Collapsed">
+            <Button.Background>
+                <ImageBrush ImageSource="/Presentacion/Iconos/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Excusionistas_Btm_Accion" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Left" Margin="330,330,0,0" VerticalAlignment="Top" Width="88" Height="27" BorderBrush="#FF050505" Background="{x:Null}" BorderThickness="3,3,3,3" FontWeight="Bold" Click="Excusionistas_Btm_Accion_Click" IsEnabled="False"/>
+        <DockPanel x:Name="GuiaPdi1" Grid.Column="1" LastChildFill="False" Margin="30,353,323,20">
+            <TextBox x:Name="Guia" TextWrapping="Wrap" Text="Guía" DockPanel.Dock="Top" IsReadOnly="True" Background="#FFD3DCD2" Height="27"/>
+            <TextBox x:Name="Pdi" TextWrapping="Wrap" Text="P de interés" DockPanel.Dock="Top" IsReadOnly="True" Background="#FFD3DCD2" Height="27"/>
+        </DockPanel>
+        <DockPanel x:Name="GuiaPdi" LastChildFill="False" Grid.Column="1" Margin="105,353,249,20">
+            <TextBox x:Name="IGuia_Txt" TextWrapping="Wrap" Text="" IsReadOnly="True" DockPanel.Dock="Top" Height="27"/>
+            <TextBox x:Name="IPdi_Txt" TextWrapping="Wrap" Text="" IsReadOnly="True" DockPanel.Dock="Top" Height="27"/>
+        </DockPanel>
+        <DockPanel x:Name="GuiaPdiInfo" Grid.Column="1" LastChildFill="False" Margin="201,353,212,20">
+            <Button x:Name="Guia_Btm" Content="" BorderThickness="3,3,3,3" BorderBrush="{x:Null}" Click="Guia_Btm_Click" FontWeight="Bold" DockPanel.Dock="Top" Height="27" IsEnabled="False" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Presentacion/Iconos/informacion.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Pdi_Btm" Content="" BorderThickness="3,3,3,3" FontWeight="Bold" Click="Pdi_Btm_Click" DockPanel.Dock="Top" Height="27" IsEnabled="False" BorderBrush="{x:Null}">
+                <Button.Foreground>
+                    <ImageBrush ImageSource="/Presentacion/Iconos/informacion.png"/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Presentacion/Iconos/informacion.png"/>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+        <Button x:Name="Volver3_Btm" Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="304,300,0,0" VerticalAlignment="Top" Click="Volver3_Btm_Click" BorderBrush="{x:Null}" Height="44" Width="50" Foreground="{x:Null}" Visibility="Collapsed">
+            <Button.Background>
+                <ImageBrush ImageSource="/Presentacion/Iconos/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <ListBox x:Name="Excursionistas_Lst" Margin="102,141,80,151" Grid.Column="1" Visibility="Collapsed"/>
+        <Label x:Name="Excursionistas__Lbl" Grid.Column="1" Content="Excursionistas" HorizontalAlignment="Left" Margin="105,98,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Visibility="Collapsed"/>
     </Grid>
 </Window>
 

@@ -26,15 +26,7 @@ C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\E
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Añadir_Ruta.baml
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Modificar_Ruta.g.cs
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Modificar_Ruta.baml
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Info_Ruta.g.cs
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Info_Ruta.baml
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Info_Guia.g.cs
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Info_Guia.baml
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\InfoPdi.g.cs
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\InfoPdi.baml
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Añadir_Guia.g.cs
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Añadir_Guia.baml
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Modificar_Guia.g.cs
 C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\Modificar_Guia.baml
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\InfoGuia.g.cs
-C:\Users\alvar\source\repos\AppSenderismo\AppSenderismo\obj\Debug\Presentacion\Formularios\InfoGuia.baml
